@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class CYGCDImageModel;
+
 @interface CYGCDImageTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) CYGCDImageModel *imageModel;
 
 @end

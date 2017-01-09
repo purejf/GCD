@@ -10,4 +10,6 @@
 
 @interface CYGCDImageModel : NSObject
 
+@property (nonatomic, strong) NSData *imageData;
+
 @end

@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class CYGCDImageModel;
+
 @interface CYBaseDemoTableViewController : UITableViewController
+
+@property (nonatomic, strong) NSMutableArray <CYGCDImageModel *>*dataArray;
+
+@property (nonatomic, strong, readonly) NSArray *urlStrs;
 
 @end

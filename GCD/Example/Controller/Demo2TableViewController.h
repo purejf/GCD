@@ -6,8 +6,8 @@
 //  Copyright © 2017年 Charles. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CYBaseDemoTableViewController.h"
 
-@interface Demo2TableViewController : UITableViewController
+@interface Demo2TableViewController : CYBaseDemoTableViewController
 
 @end

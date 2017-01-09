@@ -7,49 +7,63 @@
 //
 
 #import "CYBaseDemoTableViewController.h"
+#import "CYGCDImageTableViewCell.h"
 
 @interface CYBaseDemoTableViewController ()
 
+@property (nonatomic, strong) NSArray *urlStrs;
+
 @end
+
+static NSString *kCellID = @"CYGCDImageTableViewCellID";
 
 @implementation CYBaseDemoTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.view.backgroundColor = [UIColor whiteColor];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.tableView registerClass:[CYGCDImageTableViewCell class] forCellReuseIdentifier:kCellID];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Table view data source
+#pragma mark - UITableViewDelegate, UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.dataArray.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    CYGCDImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellID];
+    
+    cell.imageModel = self.dataArray[indexPath.row];
     
     return cell;
 }
-*/
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 160;
+}
+
+- (NSMutableArray *)dataArray {
+    return !_dataArray ? _dataArray = [NSMutableArray new] : _dataArray;
+}
+
+- (NSArray *)urlStrs {
+    if (!_urlStrs) {
+        _urlStrs = @[@"http://img.juimg.com/tuku/yulantu/130904/328512-130Z41J34638.jpg",
+                     @"http://img05.tooopen.com/images/20140805/sy_68194794777.jpg",
+                     @"http://img.taopic.com/uploads/allimg/140814/240410-140Q40F92258.jpg",
+                     @"http://img.taopic.com/uploads/allimg/140814/240410-140Q406492266.jpg"];
+    }
+    return _urlStrs;
+}
+
 
 /*
 // Override to support conditional editing of the table view.
