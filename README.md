@@ -1,7 +1,7 @@
 # GCD_Request
 GCD的使用：多个网络请求/任务并发或顺序执行，所有的网络请求/任务都结束之后再执行数据操作。
 
-###简书地址：[简书地址](http://www.jianshu.com/p/e05f2afc2026)
+###更多内容请移步至简书地址：[Charles姚](http://www.jianshu.com/p/e05f2afc2026)
 
 
 ![GCD12345.gif](http://upload-images.jianshu.io/upload_images/939127-ca8e8ad5c74fdb1c.gif?imageMogr2/auto-orient/strip)
